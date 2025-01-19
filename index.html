@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Patín Carrera Power Wheels</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript
+      ><link rel="stylesheet" href="assets/css/noscript.css"
+    /></noscript>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body class="is-preload">
+    <!-- Header -->
+    <header id="header">
+      <nav>
+        <!-- Logo -->
+        <a href="#intro" class="logo">
+          <img src="images/power.jpg" alt="Power Wheels Logo" />
+        </a>
+        <!-- Botón de menú hamburguesa -->
+        <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+        <!-- Enlaces de navegación -->
+        <ul class="navbar">
+          <!-- <li><a href="#intro">Inicio</a></li> -->
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#gallery">Galería</a></li>
+          <li><a href="#equipo">Entrenadores</a></li>
+          <li><a href="#valores-horarios">Valores y Horarios</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Intro -->
+    <section
+      id="intro"
+      class="main style1 dark fullscreen"
+      style="
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          url('images/portada.jpg');
+        background-size: cover;
+        background-position: center;
+      "
+    >
+      <div class="content">
+        <header>
+          <h2>Patín de Velocidad</h2>
+        </header>
+        <p>
+          Bienvenido al club <strong>Power Wheels</strong> ¡Velocidad, pasión y
+          comunidad sobre ruedas! ⚡❤️🇨🇱
+        </p>
+        <footer>
+          <a href="#nosotros" class="button style2 down">More</a>
+        </footer>
+      </div>
+    </section>
+
+    <!-- Nosotros -->
+    <section id="nosotros" class="main style3">
+      <div class="container">
+        <!-- Imagen como encabezado -->
+        <div class="content slide-in-left">
+          <div class="header-image">
+            <img src="images/logo.png" alt="Power Wheels Logo" />
+          </div>
+          <p>
+            Bienvenidos a Power Wheels, un club apasionado por el patinaje de
+            velocidad. Desde nuestros inicios, nos hemos destacado como un
+            referente en la formación de deportistas, ofreciendo un espacio
+            donde la pasión por las ruedas y el deporte se encuentran.
+          </p>
+          <ul>
+            <li>
+              <strong>Escuela:</strong> Días miércoles y viernes desde las 19:00
+              a 21:00hr, sábados y domingos desde las 10:00 a 12:00hr en
+              Patinodromo Parque Ohiggins.
+            </li>
+            <li>
+              <strong>Intermedia:</strong> De Lunes a Viernes desde las 19:00 a
+              21:00hr en el Patinodromo del Estadio Nacional.
+            </li>
+            <li>
+              <strong>Alta Competencia:</strong> De Lunes a Viernes desde las
+              17:00 a 19:00hr en el Patinodromo del Estadio Nacional.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Imagen a la derecha -->
+        <div class="image slide-in-right">
+          <img src="images/equipo.jpg" alt="Equipo Power Wheels" />
+        </div>
+      </div>
+      <a href="#gallery" class="button style2 down anchored">Next</a>
+    </section>
+
+    <!-- Nueva Galería -->
+    <section
+      id="gallery"
+      class="main style2 right dark fullscreen"
+      style="
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          url('images/patines.jpg');
+        background-size: cover;
+        background-position: center;
+      "
+    >
+      <div class="content box style2">
+        <header>
+          <h2>Galería de Fotos</h2>
+        </header>
+        <div class="gallery">
+          <!-- Categoría Escuela -->
+          <figure>
+            <img
+              src="images/escuela/escuela.jpg"
+              alt="Grupo Escuela"
+              data-category="escuela"
+              class="open-modal"
+            />
+            <figcaption>Escuela</figcaption>
+          </figure>
+          <!-- Categoría Intermedia -->
+          <figure>
+            <img
+              src="images/intermedia/intermedia.jpg"
+              alt="Grupo Intermedia"
+              data-category="intermedia"
+              class="open-modal"
+            />
+            <figcaption>Intermedia</figcaption>
+          </figure>
+          <!-- Categoría Alta Competencia -->
+          <figure>
+            <img
+              src="images/alta/alta.jpg"
+              alt="Grupo Alta Competencia"
+              data-category="alta"
+              class="open-modal"
+            />
+            <figcaption>Alta Competencia</figcaption>
+          </figure>
+          <!-- Categoría Bodys -->
+          <figure>
+            <img
+              src="images/bodys.jpg"
+              alt="Grupo Bodys"
+              data-category="bodys"
+              class="open-modal"
+            />
+            <figcaption>Bodys</figcaption>
+          </figure>
+        </div>
+      </div>
+      <a href="#contact" class="button style2 down anchored">Next</a>
+
+      <!-- Modal -->
+      <div id="modal" class="modal">
+        <span class="close">&times;</span>
+        <div class="modal-content">
+          <button class="prev">&#10094;</button>
+          <img id="modal-image" src="" alt="Galería" />
+          <button class="next">&#10095;</button>
+        </div>
+      </div>
+      <a href="#equipo" class="button style2 down anchored">Next</a>
+    </section>
+
+    <!-- Equipo -->
+    <section id="equipo" class="main style3 primary">
+      <div class="content slide-in-up">
+        <header>
+          <h2>Nuestros Entrenadores</h2>
+          <p>
+            En Power Wheels, nuestros entrenadores son el corazón y la fuerza
+            detrás de cada patinador que busca superar sus límites. Con una
+            vasta experiencia en patinaje de velocidad y un compromiso
+            inquebrantable con el desarrollo de nuestros deportistas, trabajan
+            día a día para transmitir pasión, técnica y valores fundamentales.
+            Ya sea que estés dando tus primeros pasos sobre ruedas o
+            perfeccionando tu rendimiento para competencias de alto nivel,
+            nuestros entrenadores están aquí para guiarte en cada etapa de tu
+            camino. ¡Conócelos y sé parte de esta gran familia de velocidad y
+            dedicación! ⚡❤️
+          </p>
+        </header>
+
+        <!-- Gallery -->
+        <div class="gallery">
+          <figure class="trainer fade-in">
+            <img src="images/escuela/profeMarco.jpg" alt="Profe Marcos" />
+            <figcaption>
+              <span class="name">PROFESOR : MARCOS MARTÍNEZ</span><br />
+              <span class="category">Categoría ESCUELA</span>
+            </figcaption>
+          </figure>
+
+          <figure class="trainer fade-in">
+            <img src="images/profeCris.jpg" alt="Cris Verdugo" />
+            <figcaption>
+              <span class="name">PROFESOR : CRIS VERDUGO</span><br />
+              <span class="category">Categoría INTERMEDIA - ALTA</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+      <a href="#valores-horarios" class="button style2 down anchored">Next</a>
+    </section>
+
+    <!-- Valores y Horarios -->
+    <section
+      id="valores-horarios"
+      class="main style3"
+      style="
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          url('images/estadio.jpg');
+        background-size: cover;
+        background-position: center;
+      "
+    >
+      <div class="container">
+        <!-- Título -->
+        <header>
+          <h2>Valores y Horarios de Entrenamiento</h2>
+          <p>
+            Conoce nuestras tarifas y los horarios en los que puedes unirte a
+            nuestras sesiones de entrenamiento.
+          </p>
+        </header>
+
+        <!-- Valores -->
+        <div class="valores">
+          <div class="card slide-in-left">
+            <h3>Escuela</h3>
+            <p><strong>$35.000</strong> / mes</p>
+            <p>Ideal para niños y principiantes.</p>
+          </div>
+          <div class="card slide-in-up">
+            <h3>Intermedia</h3>
+            <p><strong>$40.000</strong> / mes</p>
+            <p>Perfecto para quienes desean progresar.</p>
+          </div>
+          <!--<div class="card slide-in-right">
+            <h3>Alta Competencia</h3>
+            <p><strong>$50,000 CLP</strong> / mes</p>
+            <p>Diseñado para patinadores avanzados.</p>
+          </div>-->
+        </div>
+
+        <!-- Horarios con Imágenes -->
+        <div class="horarios">
+          <h3>Horarios de Entrenamiento</h3>
+          <div class="horarios-gallery">
+            <div class="horario-card">
+              <img src="images/clasesEscuela.jpg" alt="Clases Escuela" />
+            </div>
+            <div class="horario-card">
+              <img src="images/clasesIntermedia.jpg" alt="Clases Intermedia" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+      <div class="footer-content">
+        <!-- Redes Sociales -->
+        <div class="social-icons">
+          <ul class="icons">
+            <li>
+              <a
+                href="https://web.facebook.com/profile.php?id=100063687217699&sk=photos"
+                class="icon brands fa-facebook-f"
+                target="_blank"
+              >
+                <span class="label">Facebook</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.instagram.com/clubpowerwheels/"
+                class="icon brands fa-instagram"
+                target="_blank"
+              >
+                <span class="label">Instagram</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- Derechos Reservados -->
+        <div class="footer-text">
+          <p>
+            &copy; <span id="currentYear"></span> Club Power Wheels. Todos los
+            derechos reservados.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Botón WSP -->
+    <a
+      <a
+      href="https://wa.me/56954115922?text=¡Hola! Me gustaría recibir más información."
+      class="whatsapp-float"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img src="images/whatsapp.png" alt="WhatsApp" />
+      <span class="tooltip">¡Háblanos!</span>
+    </a>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.poptrox.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/animation.js" defer></script>
+  </body>
+</html>

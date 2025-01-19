@@ -1,0 +1,625 @@
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  position: relative;
+  text-align: center;
+}
+
+.modal img {
+  width: 80%;
+  max-width: 600px;
+  border-radius: 8px;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+/* General styles for header */
+#header {
+  background-color: #333; /* Fondo oscuro */
+  color: white;
+  position: fixed; /* Fija el navbar al hacer scroll */
+  top: 0;
+  width: 100%; /* Asegura que ocupe todo el ancho */
+  z-index: 1000;
+  padding: 0; /* Elimina padding extra */
+}
+
+#header nav {
+  display: flex;
+  justify-content: space-between; /* Logo a la izquierda, enlaces a la derecha */
+  align-items: center;
+  padding: 0 20px; /* Espaciado lateral para los enlaces */
+}
+
+#header .logo {
+  margin: 0; /* Elimina márgenes */
+  align-self: flex-start; /* Asegura que el logo se alinee al principio del contenedor */
+}
+
+#header .logo img {
+  width: 120px; /* Tamaño del logo */
+  height: auto;
+  display: block;
+  margin: 0; /* Elimina márgenes */
+  padding-left: 0; /* Asegura que no tenga padding lateral */
+}
+
+/* Botón de menú hamburguesa */
+#header .menu-toggle {
+  display: none; /* Oculta en pantallas grandes */
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Lista de enlaces del navbar */
+#header .navbar {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+#header .navbar li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+#header .navbar li a:hover {
+  background-color: #555; /* Efecto hover */
+}
+
+/* Elimina márgenes y padding del body */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Espaciado entre contenido y navbar */
+main {
+  margin-top: 70px; /* Ajusta según la altura del navbar */
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  #header {
+    flex-direction: column; /* Ajusta la disposición */
+  }
+
+  #header nav .menu-toggle {
+    display: block; /* Botón visible en pantallas pequeñas */
+  }
+
+  #header .navbar {
+    display: none; /* Oculta el menú por defecto */
+    flex-direction: column;
+    background-color: #333;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    padding: 10px 0;
+  }
+
+  #header .navbar.show {
+    display: flex; /* Muestra el menú al hacer clic */
+  }
+
+  #header .navbar li {
+    margin: 10px 0;
+  }
+
+  #header .logo img {
+    width: 100px; /* Logo más pequeño en pantallas pequeñas */
+  }
+}
+
+.trainer {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+
+.trainer img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.trainer figcaption {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333;
+  font-weight: bold;
+  line-height: 1.4; /* Asegura un buen espaciado entre líneas */
+}
+
+.trainer figcaption .name {
+  display: block; /* Fuerza el texto a aparecer en su propia línea */
+  font-size: 16px;
+}
+
+.trainer figcaption .category {
+  display: block; /* Fuerza el texto a aparecer en una nueva línea */
+  font-size: 14px;
+  color: #666; /* Color diferente para distinguirlo */
+}
+/* Sección "Nosotros" */
+#nosotros {
+  background-color: #f7f7f7; /* Fondo claro */
+  padding: 50px 20px;
+}
+
+#nosotros .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+#nosotros .content {
+  flex: 1;
+  max-width: 60%;
+}
+
+#nosotros .content header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+#nosotros .content header p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+#nosotros .content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: #666;
+}
+
+#nosotros .content ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#nosotros .content ul li {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+#nosotros .content ul li strong {
+  color: #333;
+}
+
+#nosotros .image {
+  flex: 1;
+  text-align: right;
+}
+
+#nosotros .image img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+/* Estilo inicial para el efecto */
+.slide-in-left,
+.slide-in-right {
+  opacity: 0; /* Oculto al inicio */
+  transform: translateX(-50px); /* Desplazamiento inicial */
+  transition: all 0.8s ease-in-out;
+}
+
+.slide-in-right {
+  transform: translateX(50px); /* Desplazamiento opuesto para la imagen */
+}
+
+/* Cuando el elemento está visible */
+.slide-in-left.visible,
+.slide-in-right.visible {
+  opacity: 1; /* Totalmente visible */
+  transform: translateX(0); /* Sin desplazamiento */
+}
+/* Animaciones */
+.slide-in-up {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-in-out;
+}
+
+.slide-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+}
+/* Fondo de la sección */
+#contact {
+  position: relative;
+  color: white; /* Texto blanco para contraste */
+  padding: 50px 20px;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("images/crisMeta.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Contenido principal */
+#contact .content {
+  position: relative; /* Asegura que el contenido esté encima del fondo */
+  z-index: 2;
+}
+
+/* Títulos y texto */
+#contact header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+#contact header p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #ddd;
+}
+
+/* Caja del formulario */
+#contact .box {
+  background: rgba(255, 255, 255, 0.9); /* Fondo blanco semi-transparente */
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo de los campos */
+#contact input[type="text"],
+#contact input[type="email"],
+#contact input[type="tel"],
+#contact textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+#contact textarea {
+  resize: vertical;
+}
+
+#contact input[type="submit"] {
+  background: #333; /* Fondo oscuro */
+  color: white; /* Texto blanco */
+  border: none;
+  border-radius: 25px; /* Hace el botón completamente ovalado */
+  padding: 10px 30px; /* Ajusta el tamaño interno del botón */
+  font-size: 1rem;
+  line-height: 1; /* Ajusta la altura del texto */
+  text-align: center; /* Centra el texto horizontalmente */
+  cursor: pointer;
+  transition: background 0.3s ease; /* Animación de cambio de fondo */
+  display: inline-block; /* Asegura que el tamaño del botón dependa de su contenido */
+  vertical-align: middle; /* Asegura que el texto esté centrado verticalmente */
+}
+
+#contact input[type="submit"]:hover {
+  background: #555; /* Cambia el fondo al pasar el mouse */
+}
+
+/* Botón de WhatsApp flotante */
+.whatsapp-float {
+  position: fixed; /* Fija el botón en la pantalla */
+  bottom: 20px; /* Separación desde la parte inferior */
+  left: 20px; /* Separación desde el lado izquierdo */
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+  width: 60px; /* Tamaño del botón */
+  height: 60px; /* Tamaño del botón */
+  background-color: #25d366; /* Color de fondo de WhatsApp */
+  border-radius: 50%; /* Botón circular */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Asegura que la tooltip no afecte la posición del botón */
+.whatsapp-float img {
+  width: 35px; /* Tamaño del icono de WhatsApp */
+  height: auto;
+}
+
+/* Tooltip */
+.whatsapp-float .tooltip {
+  visibility: hidden; /* Oculta por defecto */
+  background-color: #333; /* Fondo oscuro */
+  color: white; /* Texto blanco */
+  text-align: center;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  position: absolute;
+  bottom: 70px; /* Posición sobre el botón */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0; /* Totalmente transparente por defecto */
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Muestra la tooltip al pasar el mouse */
+.whatsapp-float:hover .tooltip {
+  visibility: visible; /* Muestra la tooltip */
+  opacity: 1; /* Aparece gradualmente */
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1); /* Efecto de zoom al pasar el mouse */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+#valores-horarios .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#valores-horarios header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: white;
+}
+
+#valores-horarios header p {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  color: white;
+}
+
+/* Cards de Valores */
+.valores {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 30%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+/* Tabla de Horarios */
+.horarios {
+  margin-top: 50px;
+}
+
+.horarios h3 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: white;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table th,
+table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: center;
+  font-size: 1rem;
+}
+
+table th {
+  background-color: #333;
+  color: white;
+}
+
+table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Animaciones */
+.slide-in-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.8s ease-in-out;
+}
+
+.slide-in-up {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-in-out;
+}
+
+.slide-in-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.8s ease-in-out;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+}
+/* Sección de Horarios con Imágenes */
+.horarios {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.horarios h3 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.horarios-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap; /* Permite que las imágenes se ajusten en pantallas pequeñas */
+}
+
+.horario-card {
+  width: 100%;
+  max-width: 400px; /* Tamaño máximo de las imágenes */
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.horario-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+.horario-card:hover {
+  transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+/* Footer */
+#footer {
+  background-color: #333; /* Fondo oscuro */
+  color: white; /* Texto blanco */
+  padding: 40px 20px; /* Espaciado general */
+  text-align: center;
+  position: relative; /* Asegura que no se solape con otros elementos */
+  z-index: 10;
+}
+
+#footer .footer-content {
+  max-width: 1200px; /* Ancho máximo */
+  margin: 0 auto; /* Centra el contenido */
+}
+
+#footer .social-icons {
+  margin-bottom: 20px; /* Espacio entre los iconos y el texto */
+}
+
+#footer .icons {
+  list-style: none; /* Elimina puntos de lista */
+  padding: 0;
+  display: flex; /* Flexbox para centrar */
+  justify-content: center; /* Centra los iconos horizontalmente */
+  gap: 20px; /* Espacio entre los iconos */
+}
+
+#footer .icons li {
+  display: inline-block; /* Asegura que cada icono sea un bloque */
+}
+
+#footer .icons li a {
+  font-size: 2rem; /* Tamaño de los iconos */
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+#footer .icons li a:hover {
+  color: #aaa; /* Cambia de color al pasar el mouse */
+}
+
+#footer .footer-text p {
+  font-size: 0.9rem; /* Tamaño del texto */
+  color: #ccc; /* Color más claro */
+  margin: 0;
+}

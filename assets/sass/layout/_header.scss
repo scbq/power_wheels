@@ -1,0 +1,29 @@
+#header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 20px;
+
+	.logo {
+		margin: 0;
+	}
+
+	.logo img {
+		width: 120px;
+		height: auto;
+		display: block;
+	}
+}
+@include breakpoint('<=small') {
+	#header {
+		.logo {
+			text-align: left;
+			/* Mantiene el logo alineado a la izquierda */
+		}
+
+		nav {
+			display: flex !important;
+			/* Evita que el menú desaparezca */
+		}
+	}
+}
