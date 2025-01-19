@@ -204,67 +204,167 @@ main {
   font-size: 14px;
   color: #666; /* Color diferente para distinguirlo */
 }
-/* Sección "Nosotros" */
+
+/* Sección Nosotros */
 #nosotros {
-  background-color: #f7f7f7; /* Fondo claro */
-  padding: 50px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px 0;
 }
 
 #nosotros .container {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: row;
+  align-items: flex-start;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 #nosotros .content {
-  flex: 1;
-  max-width: 60%;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 20px;
+  width: 100%;
 }
 
-#nosotros .content header h2 {
-  font-size: 2.5rem;
+#nosotros .logo img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+
+#nosotros .text {
+  text-align: left;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#nosotros .text:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+#nosotros .text h2 {
   margin-bottom: 10px;
   color: #333;
+  font-size: 24px;
 }
 
-#nosotros .content header p {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
+#nosotros .text p {
+  font-size: 16px;
   color: #555;
+  margin-bottom: 10px;
 }
 
-#nosotros .content p {
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 15px;
-  color: #666;
-}
-
-#nosotros .content ul {
-  list-style-type: none;
+#nosotros .text ul {
+  list-style: none;
   padding: 0;
 }
 
-#nosotros .content ul li {
-  font-size: 1rem;
-  margin-bottom: 10px;
+#nosotros .text ul li {
+  font-size: 16px;
+  margin-bottom: 5px;
 }
 
-#nosotros .content ul li strong {
-  color: #333;
-}
-
-#nosotros .image {
-  flex: 1;
-  text-align: right;
+#nosotros .text ul li strong {
+  color: #007bff;
 }
 
 #nosotros .image img {
   max-width: 100%;
-  border-radius: 10px;
+  height: auto;
+  border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+#nosotros .image img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsivo para móviles */
+@media (max-width: 768px) {
+  #nosotros .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #nosotros .content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  #nosotros .logo img {
+    margin-bottom: 20px;
+  }
+
+  #nosotros .text {
+    text-align: center;
+  }
+
+  #nosotros .image {
+    margin-top: 20px;
+  }
+}
+
+/* Animaciones */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-in-left {
+  animation: slideInLeft 1s ease-out forwards;
+}
+
+.slide-in-right {
+  animation: slideInRight 1s ease-out forwards;
+}
+
+.slide-in-up {
+  animation: slideInUp 1s ease-out forwards;
+}
+
+.slide-in-left,
+.slide-in-right,
+.slide-in-up {
+  opacity: 0; /* Para evitar que se vean antes de animarse */
+}
+
 /* Estilo inicial para el efecto */
 .slide-in-left,
 .slide-in-right {
@@ -576,6 +676,7 @@ table tr:nth-child(even) {
   transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
+
 /* Footer */
 #footer {
   background-color: #333; /* Fondo oscuro */
