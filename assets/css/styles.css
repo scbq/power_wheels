@@ -70,6 +70,7 @@
   color: white;
   position: fixed; /* Fija el navbar al hacer scroll */
   top: 0;
+  left: 0;
   width: 100%; /* Asegura que ocupe todo el ancho */
   z-index: 1000;
   padding: 0; /* Elimina padding extra */
@@ -88,10 +89,10 @@
 }
 
 #header .logo img {
-  width: 120px; /* Tamaño del logo */
+  width: 100px; /* Tamaño del logo */
   height: auto;
   display: block;
-  margin: 0; /* Elimina márgenes */
+  margin: auto; /* Elimina márgenes */
   padding-left: 0; /* Asegura que no tenga padding lateral */
 }
 
