@@ -128,6 +128,32 @@
   background-color: #555; /* Efecto hover */
 }
 
+/* Línea interactiva bajo el menú seleccionado */
+.navbar li {
+  position: relative; /* Necesario para posicionar la línea */
+}
+
+.navbar li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 3px; /* Grosor de la línea */
+  background-color: #ffffff; /* Color de la línea */
+  transition: width 0.3s ease; /* Animación de la línea */
+}
+
+.navbar li a:hover::after,
+.navbar li a.active::after {
+  width: 100%; /* Línea ocupa todo el ancho al estar activo o en hover */
+}
+
+/* Separación superior e inferior para la imagen */
+#header .logo img {
+  margin: 10px 0; /* Ajusta según la cantidad de espacio que necesites */
+}
+
 /* Elimina márgenes y padding del body */
 body {
   margin: 0;
@@ -309,11 +335,19 @@ main {
     text-align: center;
   }
 
-  #nosotros .image {
-    margin-top: 20px;
+  #nosotros .image img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  #nosotros .image img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   }
 }
-
+/*------------------------------------------------*/
 /* Animaciones */
 @keyframes slideInLeft {
   from {

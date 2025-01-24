@@ -140,3 +140,34 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+// Actualizar la clase "active" en el navbar según la sección visible
+const sections = document.querySelectorAll("section"); // Todas las secciones con id
+const navLinks = document.querySelectorAll(".navbar li a"); // Los enlaces del navbar
+
+const updateActiveLink = () => {
+  let currentSection = "";
+
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop - window.innerHeight / 4; // Ajuste más preciso para secciones visibles
+    const sectionBottom = sectionTop + section.offsetHeight;
+
+    if (window.scrollY >= sectionTop && window.scrollY < sectionBottom) {
+      currentSection = section.getAttribute("id");
+    }
+  });
+
+  // Actualizar la clase "active" en el navbar
+  navLinks.forEach((link) => {
+    link.classList.remove("active");
+    if (link.getAttribute("href").includes(currentSection)) {
+      link.classList.add("active");
+    }
+  });
+};
+
+// Escuchar el evento de scroll
+window.addEventListener("scroll", updateActiveLink);
+
+// Llamar a la función al cargar la página
+updateActiveLink();

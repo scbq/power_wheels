@@ -19,14 +19,14 @@
       <nav>
         <!-- Logo -->
         <a href="#intro" class="logo">
-          <img src="images/power.jpg" alt="Power Wheels Logo" />
+          <img src="images/logo.png" alt="Power Wheels Logo" />
         </a>
         <!-- Botón de menú hamburguesa -->
         <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
         <!-- Enlaces de navegación -->
         <ul class="navbar">
           <!-- <li><a href="#intro">Inicio</a></li> -->
-          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a class="active" href="#nosotros">Nosotros</a></li>
           <li><a href="#gallery">Galería</a></li>
           <li><a href="#equipo">Entrenadores</a></li>
           <li><a href="#valores-horarios">Valores y Horarios</a></li>
@@ -61,7 +61,7 @@
 
     <section id="nosotros" class="main style3">
       <div class="container">
-        <div class="content">
+        <div class="content slide-in-up">
           <div class="logo">
             <img src="images/logo.png" alt="Power Wheels Logo" />
           </div>
@@ -74,24 +74,25 @@
               ofreciendo un espacio donde la pasión por las ruedas y el deporte
               se encuentran.
             </p>
-            <ul>
-              <li>
-                <strong>Escuela:</strong> Miércoles y viernes (19:00 - 21:00),
-                sábados y domingos (10:00 - 12:00) en el Patinódromo Parque
-                O'Higgins.
-              </li>
-              <li>
-                <strong>Intermedia:</strong> Lunes a viernes (19:00 - 21:00) en
-                el Patinódromo del Estadio Nacional.
-              </li>
-            </ul>
+            <div class="info-grid">
+              <div class="info-card slide-in-left">
+                <h3>Escuela</h3>
+                <p>Miércoles y viernes (19:00 - 21:00)</p>
+                <p>Sábados y domingos (10:00 - 12:00)</p>
+                <p>Ubicación: Patinódromo Parque O'Higgins</p>
+              </div>
+              <div class="info-card slide-in-right">
+                <h3>Intermedia</h3>
+                <p>Lunes a viernes (19:00 - 21:00)</p>
+                <p>Ubicación: Patinódromo Estadio Nacional</p>
+              </div>
+            </div>
           </div>
           <div class="image">
             <img src="images/equipo.jpg" alt="Equipo Power Wheels" />
           </div>
         </div>
       </div>
-      <a href="#gallery" class="button style2 down anchored">Next</a>
     </section>
 
     <!-- Nueva Galería -->
